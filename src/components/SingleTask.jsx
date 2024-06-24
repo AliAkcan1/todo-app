@@ -1,5 +1,6 @@
 import { useContext, useState } from "react"
 import { TasksDispatchContext } from "../Context"
+import PropTypes from 'prop-types';
 
 function SingleTask({ task }) {
     const dispatch = useContext(TasksDispatchContext)
@@ -72,5 +73,15 @@ function SingleTask({ task }) {
         </li>
     )
 }
+
+SingleTask.propTypes = {
+    task: PropTypes.shape({
+      id: PropTypes.string.isRequired,
+      description: PropTypes.string.isRequired,
+      color: PropTypes.string.isRequired,
+      date: PropTypes.string.isRequired,
+      deadline: PropTypes.string.isRequired,
+    }).isRequired,
+  };
 
 export default SingleTask

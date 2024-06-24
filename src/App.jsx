@@ -1,7 +1,6 @@
-import { useReducer, useState } from "react"
+import { useReducer } from "react"
 import TaskForm from "./components/TaskForm"
 import TaskList from "./components/TaskList"
-import { v4 as uuidv4 } from 'uuid'
 import { TasksContext, TasksDispatchContext } from "./Context"
 
 function App() {
@@ -40,40 +39,6 @@ function App() {
       default:
         return tasks
     }
-  }
-
-  function handleAddTask(description, completed, color, date, deadline) {
-    dispatch({
-      type: 'ADD_TASK',
-      id: uuidv4.v4(),
-      description,
-      completed,
-      color,
-      date,
-      deadline
-    })
-  }
-
-  function handleRemoveTask(id) {
-    dispatch({
-      type: 'REMOVE_TASK',
-      id
-    })
-  }
-
-  function handleEditTask(id, description) {
-    dispatch({
-      type: 'EDIT_TASK',
-      id,
-      description
-    })
-  }
-
-  function handleToggleTask(id) {
-    dispatch({
-      type: 'TOGGLE_TASK',
-      id
-    })
   }
 
   return (
