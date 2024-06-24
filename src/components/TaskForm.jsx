@@ -55,13 +55,26 @@ function TaskForm() {
                     <label htmlFor="color" className="block font-medium">
                         Color
                     </label>
-                    <input
-                        type="color"
-                        id="color"
-                        value={color}
-                        onChange={(e) => setColor(e.target.value)}
-                        className="border border-gray-300 rounded-md px-3 py-2 w-full"
-                    />
+                    <select className="rounded-md px-3 py-2 border border-gray-300">
+                        <option
+                            value="red"
+                            onClick={(e) => setColor(e.target.value)}
+                        >
+                            Red
+                        </option>
+                        <option
+                            value="yellow"
+                            onClick={(e) => setColor(e.target.value)}
+                        >
+                            Yellow
+                        </option>
+                        <option
+                            value="green"
+                            onClick={(e) => setColor(e.target.value)}
+                        >
+                            Green
+                        </option>
+                    </select>
                 </div>
                 <button
                     type="submit"
